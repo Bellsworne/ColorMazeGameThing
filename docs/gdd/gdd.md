@@ -33,7 +33,7 @@ and strategy to the gameplay.
 
 - Greyscale initially, gradually filling with colour
 
-## Audiovisual
+# Audiovisual
 
 - Ambient soundtrack that evolves as more colour is introduced
 
