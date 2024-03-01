@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuaghy46rgrfa"]
+
+[ext_resource type="PackedScene" uid="uid://f81f0imxkgbt" path="res://Content/Kits/2open2closenoroof.glb" id="1_drllq"]
+
+[node name="DONOTDELETE" type="Node3D"]
+
+[node name="2open2closenoroof" parent="." instance=ExtResource("1_drllq")]
