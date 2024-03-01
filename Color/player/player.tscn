@@ -26,4 +26,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -0.150649)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0216249, 0.150649)
 target_position = Vector3(0, 0, -2)
 collision_mask = 28
+collide_with_areas = true
 script = ExtResource("2_wnh12")

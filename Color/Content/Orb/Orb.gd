@@ -16,8 +16,12 @@ var index_colors : Array[String] = ["ff0000", "00ff00", "0000ff", "917505", "d40
 @export var color : _COLOR = _COLOR.RED
 
 func _ready() -> void:
+	add_to_group("Orb")
 	var mat : StandardMaterial3D = StandardMaterial3D.new()
 	Orb_Mesh.set_surface_override_material(0, mat)
 	mat.albedo_color = Color(index_colors[color])
 	Light.light_color = Color(index_colors[color])
 
+
+func _goto_hell():
+	global_transform.origin = Vector3(-1000, -1000, -1000)

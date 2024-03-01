@@ -6,26 +6,22 @@ class_name Player extends CharacterBody3D
 @export var mouse_sensitivity: float = 0.001
 @export var camera: Camera3D
 
+var orbintory : Orbintory = Orbintory.new()
+
 var look_dir: Vector2
 
-signal interacted
-
-func _ready():
+func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 
-func _physics_process(delta):
+func _physics_process(delta) -> void:
 	handle_movement(delta)
 
 
-func _unhandled_input(event):
+func _unhandled_input(event : InputEvent) -> void:
 	handle_camera_rotation(event)
-	
-	if (Input.is_action_just_pressed("interact")):
-		interacted.emit()
 
-
-func handle_movement(delta):
+func handle_movement(delta) -> void:
 	var _velocity: Vector3 = velocity
 	if (!is_on_floor()):
 		_velocity.y -= gravity * delta
@@ -47,7 +43,7 @@ func handle_movement(delta):
 	move_and_slide()
 	
 
-func handle_camera_rotation(event):
+func handle_camera_rotation(event : InputEvent) -> void:
 	var mouse_motion: InputEventMouseMotion
 	if (event is InputEventMouseMotion):
 		mouse_motion = event
