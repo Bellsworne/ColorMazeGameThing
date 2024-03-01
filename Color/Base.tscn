@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ct65ax0q6yyq4"]
+[gd_scene load_steps=5 format=3 uid="uid://ct65ax0q6yyq4"]
 
 [ext_resource type="PackedScene" uid="uid://drilb8g5nmrju" path="res://player/player.tscn" id="1_gwl7y"]
+[ext_resource type="PackedScene" uid="uid://n4wcvgk1n1t6" path="res://Content/Orb/Orb.tscn" id="2_1njw4"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_jusrp"]
 
@@ -21,3 +22,18 @@ shape = SubResource("ConvexPolygonShape3D_i8uma")
 
 [node name="Player" parent="." instance=ExtResource("1_gwl7y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 6, 24)
+
+[node name="Orb" parent="." instance=ExtResource("2_1njw4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="Orb2" parent="." instance=ExtResource("2_1njw4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2, 0)
+color = 1
+
+[node name="Orb3" parent="." instance=ExtResource("2_1njw4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 0)
+color = 2
+
+[node name="Orb4" parent="." instance=ExtResource("2_1njw4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, 0)
+color = 2
