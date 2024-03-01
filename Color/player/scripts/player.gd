@@ -20,7 +20,13 @@ func _physics_process(delta) -> void:
 
 func _unhandled_input(event : InputEvent) -> void:
 	handle_camera_rotation(event)
-
+	
+	if (event.is_action_pressed("pause")):
+		if (Input.mouse_mode == Input.MOUSE_MODE_CAPTURED):
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		else:
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		
 func handle_movement(delta) -> void:
 	var _velocity: Vector3 = velocity
 	if (!is_on_floor()):
@@ -41,7 +47,7 @@ func handle_movement(delta) -> void:
 
 	velocity = _velocity
 	move_and_slide()
-	
+
 
 func handle_camera_rotation(event : InputEvent) -> void:
 	var mouse_motion: InputEventMouseMotion
@@ -50,5 +56,3 @@ func handle_camera_rotation(event : InputEvent) -> void:
 		rotate_y(-mouse_motion.relative.x * mouse_sensitivity)
 		camera.rotate_x(-mouse_motion.relative.y * mouse_sensitivity)
 		camera.rotation = Vector3(clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90)), camera.rotation.y, camera.rotation.z)
-		
-		

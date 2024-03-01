@@ -10,12 +10,10 @@ func _process(_delta : float) -> void:
 func handle_ray_collision():
 	if (is_colliding()):
 		var hit_obj: Node = get_collider()
-		#ERM actually no haha lets see...
+
 		if hit_obj == null:
 			return
 		if (hit_obj is Orb):
 			if Input.is_action_just_released("interact"):
 				player.orbintory.collection.append(hit_obj)
 				hit_obj._goto_hell()
-			## todo: add Orb interation
-			#pass 
