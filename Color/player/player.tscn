@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://drilb8g5nmrju"]
+[gd_scene load_steps=5 format=3 uid="uid://drilb8g5nmrju"]
 
 [ext_resource type="Script" path="res://player/scripts/player.gd" id="1_fj7u3"]
+[ext_resource type="Script" path="res://player/scripts/InteractionRay.gd" id="2_wnh12"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_2dlsi"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8325u"]
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera")]
+collision_mask = 20
 script = ExtResource("1_fj7u3")
 gravity = 9.0
 camera = NodePath("Camera3D")
@@ -18,3 +20,10 @@ mesh = SubResource("CapsuleMesh_2dlsi")
 shape = SubResource("CapsuleShape3D_8325u")
 
 [node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -0.150649)
+
+[node name="InteractRay" type="RayCast3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0216249, 0.150649)
+target_position = Vector3(0, 0, -2)
+collision_mask = 28
+script = ExtResource("2_wnh12")

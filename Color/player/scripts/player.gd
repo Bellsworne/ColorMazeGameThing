@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name Player extends CharacterBody3D
 
 @export var speed: float = 5.0
 @export var jump_velocity: float = 4.5
@@ -8,6 +8,7 @@ extends CharacterBody3D
 
 var look_dir: Vector2
 
+signal interacted
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -20,6 +21,9 @@ func _physics_process(delta):
 func _unhandled_input(event):
 	handle_camera_rotation(event)
 	
+	if (Input.is_action_just_pressed("interact")):
+		interacted.emit()
+
 
 func handle_movement(delta):
 	var _velocity: Vector3 = velocity
