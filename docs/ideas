@@ -1,0 +1,77 @@
+- Monochrome Scenes
+
+- Scene Data:
+	???
+
+- Collect Color Orbs (Emission?, reflect, beautiful/graphic)
+
+- Red:
+	Spawn Platforms for next destination, require platforming/physics induced movement
+
+- Blue:
+	Instance enemies(?) somehow fight/kill? maybe costs "Golden Orb"?
+- Green:
+	Spawns obstacles(?) to block entrance/exit?
+
+Player/User challenges:
+navigating mazes, finding colour orbs
+defeating enemies(?)
+
+Developer Goals:
+
+- Implement maze levels(WFC?) (May get more complex i.e iter += 1 per instance)
+
+- New mechanics/enemy types as player progresses(?)
+
+- Audiovisual experience(?)
+
+- Incorporate procgen style content via WFC and/or kit spawn tools
+
+
+Technical Data:
+
+- Use polymorphism to instance Orbs with procedural variation, try enum and param data for scale:
+1 CONSTANT RED
+2 CONSTANT BLUE
+4 CONSTANT GREEN
+8 CONSTANT GOLD
+16 CONSTANT RAINBOW
+
+Use difficulty curve i.e:
+1-5 = "1", Introductory:
+	Basic movement(WSAD_ Space), simple maze layouts and size(WFC lets us)
+	Red and Green orbs
+	Lots of time limit + score gain/boost high
+
+6-10 = "2", Intermediate:
+	Maze layouts and branching dead-ends increase
+	Blue Orbs introduced, enemies spawn
+	Tighten time limits
+11-15 = 4, Advanced:
+	Complex puzzles ie require platforms
+
+	Environmental hazards i.e moving platforms, rotating platforms, water currents
+
+	Tighten time x2
+	
+	Different shades of Blue = different enemies(?)
+
+16-20 = 8, Expert:
+
+	Present maze with hidden rooms 
+
+	Golden and Rainbow orbs, golden = "mana"(?)
+
+	(Boss-like encounters(?) Legendary Golden/Blue orb?)
+
+	Strict time constraints, super tight
+
+20+ = 16, "Infinity":
+	Progressively procedurally iter i.e 20+ _iter += 1
+
+	Using seeded gen etc i.e deterministic levels prior fetch from array
+
+	Scoreboard iter *
+
+
+
