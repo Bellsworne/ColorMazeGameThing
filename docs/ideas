@@ -27,15 +27,33 @@ Developer Goals:
 
 - Incorporate procgen style content via WFC and/or kit spawn tools
 
+- Deterministic 
+
 
 Technical Data:
 
 - Use polymorphism to instance Orbs with procedural variation, try enum and param data for scale:
+
 1 CONSTANT RED
 2 CONSTANT BLUE
 4 CONSTANT GREEN
 8 CONSTANT GOLD
 16 CONSTANT RAINBOW
+
+
+^ bitfields:
+
+red^blue = purple = temp invincibility
+
+green^blue = yellow(haha) = shield from enemies temporarily
+
+red^green = ???? = speed boost
+
+
+
+
+
+treat levels as seed+init start playthrough
 
 Use difficulty curve i.e:
 1-5 = "1", Introductory:
@@ -46,11 +64,16 @@ Use difficulty curve i.e:
 6-10 = "2", Intermediate:
 	Maze layouts and branching dead-ends increase
 	Blue Orbs introduced, enemies spawn
+	
+	Collecting 10+ blue orbs = spawns "Poison Flowers"
+
 	Tighten time limits
 11-15 = 4, Advanced:
 	Complex puzzles ie require platforms
 
 	Environmental hazards i.e moving platforms, rotating platforms, water currents
+
+	Collecting 10+ red orbs = maze grows "bleeding vines"
 
 	Tighten time x2
 	
@@ -62,6 +85,8 @@ Use difficulty curve i.e:
 
 	Golden and Rainbow orbs, golden = "mana"(?)
 
+	Collecting 10+ yellow = maze becomes blinding, screen flashes white/black
+
 	(Boss-like encounters(?) Legendary Golden/Blue orb?)
 
 	Strict time constraints, super tight
@@ -71,7 +96,5 @@ Use difficulty curve i.e:
 
 	Using seeded gen etc i.e deterministic levels prior fetch from array
 
-	Scoreboard iter *
-
-
+	Scoreboard iter * orb(enum>) * level after 16
 
