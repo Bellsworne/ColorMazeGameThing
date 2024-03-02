@@ -49,6 +49,8 @@ shape = SubResource("ConvexPolygonShape3D_i8uma")
 
 [node name="Player" parent="." instance=ExtResource("1_gwl7y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 1)
+sprint_speed_modifier = 10.0
+jump_velocity = 6.0
 
 [node name="TEST" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
