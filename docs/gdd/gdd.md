@@ -61,10 +61,10 @@ Unlockable "Infinity Mode" which rapidly increases difficulty, but boosts reward
 
 - Programming Language: GDScript 2
 
-- 2D/UI: Krita/Gimp
+- 2D/UI: Krita/Gimp/Inkscape
 
 - 3D: Blender
 
-- Audio: 
+- Audio: Waveform/Audacity
 
 
