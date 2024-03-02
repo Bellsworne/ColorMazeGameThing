@@ -1,0 +1,16 @@
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://gv0slakiyp4p"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_igrgf"]
+
+[sub_resource type="Sky" id="Sky_12l0h"]
+sky_material = SubResource("PhysicalSkyMaterial_igrgf")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_12l0h")
+ambient_light_source = 3
+tonemap_mode = 3
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.2
+volumetric_fog_albedo = Color(0.152941, 0.152941, 0.152941, 1)
+adjustment_enabled = true

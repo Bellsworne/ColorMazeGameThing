@@ -1,11 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://ct65ax0q6yyq4"]
+[gd_scene load_steps=9 format=3 uid="uid://ct65ax0q6yyq4"]
 
 [ext_resource type="PackedScene" uid="uid://drilb8g5nmrju" path="res://player/player.tscn" id="1_gwl7y"]
 [ext_resource type="Script" path="res://Content/RuntimeActive.gd" id="1_odhow"]
 [ext_resource type="Texture2D" uid="uid://cfnki7xaxjwao" path="res://Content/Kits/stone wall 4.png" id="1_smwtl"]
 [ext_resource type="PackedScene" uid="uid://n4wcvgk1n1t6" path="res://Content/Orb/Orb.tscn" id="2_1njw4"]
-[ext_resource type="Script" path="res://Generation/WFC/WFC.gd" id="3_hvakm"]
-[ext_resource type="MeshLibrary" uid="uid://703grxrhglvi" path="res://Generation/WFC/data.tres" id="4_6qoxp"]
+[ext_resource type="PackedScene" uid="uid://dtfayo4pyee0o" path="res://Generation/geometry.tscn" id="5_iffqk"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_jusrp"]
 
@@ -16,22 +15,7 @@ uv1_scale = Vector3(240, 240, 240)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_i8uma"]
 points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1)
 
-[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_igrgf"]
-
-[sub_resource type="Sky" id="Sky_12l0h"]
-sky_material = SubResource("PhysicalSkyMaterial_igrgf")
-
-[sub_resource type="Environment" id="Environment_m7kwu"]
-background_mode = 2
-sky = SubResource("Sky_12l0h")
-ambient_light_source = 3
-tonemap_mode = 3
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.2
-volumetric_fog_albedo = Color(0.152941, 0.152941, 0.152941, 1)
-adjustment_enabled = true
-
-[node name="Node3D" type="Node3D"]
+[node name="Node3D2" type="Node3D"]
 script = ExtResource("1_odhow")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -49,6 +33,7 @@ shape = SubResource("ConvexPolygonShape3D_i8uma")
 
 [node name="Player" parent="." instance=ExtResource("1_gwl7y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 1)
+visible = false
 
 [node name="TEST" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -69,19 +54,7 @@ color = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, 0)
 color = 2
 
-[node name="Geometry" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -15)
-
-[node name="Node3D" type="Node3D" parent="Geometry" node_paths=PackedStringArray("tilemap")]
-script = ExtResource("3_hvakm")
-tilemap = NodePath("../GridMap")
-
-[node name="GridMap" type="GridMap" parent="Geometry"]
-mesh_library = ExtResource("4_6qoxp")
-collision_layer = 5
-collision_mask = 4
-
-[node name="OrbSpawner" type="Node3D" parent="Geometry"]
+[node name="Geometry" parent="." instance=ExtResource("5_iffqk")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, 0.129409, -0.482963, -0.5, -0.224144, 0.836516, -4.2222e-08, 0.965926, 0.258819, 0, 0, 0)
@@ -89,4 +62,9 @@ light_energy = 0.2
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_m7kwu")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 65, 35, 80)
+projection = 1
+current = true
+size = 195.0

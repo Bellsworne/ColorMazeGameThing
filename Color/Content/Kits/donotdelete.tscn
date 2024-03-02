@@ -1,7 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://cuaghy46rgrfa"]
+[gd_scene load_steps=5 format=3 uid="uid://cuaghy46rgrfa"]
 
 [ext_resource type="PackedScene" uid="uid://f81f0imxkgbt" path="res://Content/Kits/2open2closenoroof.glb" id="1_drllq"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_o820c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fsspv"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yroiv"]
+albedo_color = Color(1, 0, 1, 1)
 
 [node name="DONOTDELETE" type="Node3D"]
 
 [node name="2open2closenoroof" parent="." instance=ExtResource("1_drllq")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_o820c")
+surface_material_override/0 = SubResource("StandardMaterial3D_fsspv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_o820c")
+surface_material_override/0 = SubResource("StandardMaterial3D_yroiv")

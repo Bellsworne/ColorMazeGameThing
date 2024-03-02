@@ -21,6 +21,7 @@ shape = SubResource("CapsuleShape3D_8325u")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -0.150649)
+visible = false
 far = 100000.0
 
 [node name="InteractRay" type="RayCast3D" parent="Camera3D"]
@@ -49,4 +50,4 @@ mouse_filter = 2
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-text = "ORBS LEFT:"
+text = "Erm.... Cheesed to meet you?"

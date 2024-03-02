@@ -1,7 +1,7 @@
 class_name Player extends CharacterBody3D
 
 @export var speed: float = 5.0
-@export var jump_velocity: float = 4.5
+@export var jump_velocity: float = 15
 @export var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var mouse_sensitivity: float = 0.001
 @export var camera: Camera3D
