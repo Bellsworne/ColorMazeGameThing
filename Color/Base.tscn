@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Content/RuntimeActive.gd" id="1_odhow"]
 [ext_resource type="Texture2D" uid="uid://cfnki7xaxjwao" path="res://Content/Kits/stone wall 4.png" id="1_smwtl"]
 [ext_resource type="PackedScene" uid="uid://n4wcvgk1n1t6" path="res://Content/Orb/Orb.tscn" id="2_1njw4"]
-[ext_resource type="PackedScene" uid="uid://dtfayo4pyee0o" path="res://Generation/geometry.tscn" id="5_iffqk"]
+[ext_resource type="PackedScene" uid="uid://dtfayo4pyee0o" path="res://Generation/geometry.tscn" id="5_v84v4"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_jusrp"]
 
@@ -54,17 +54,15 @@ color = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, 0)
 color = 2
 
-[node name="Geometry" parent="." instance=ExtResource("5_iffqk")]
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, 0.129409, -0.482963, -0.5, -0.224144, 0.836516, -4.2222e-08, 0.965926, 0.258819, 0, 0, 0)
 light_energy = 0.2
 shadow_enabled = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 65, 35, 80)
 projection = 1
 current = true
 size = 195.0
+
+[node name="Geometry" parent="." instance=ExtResource("5_v84v4")]
